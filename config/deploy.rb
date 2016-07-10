@@ -1,8 +1,8 @@
-server "188.166.165.105", port: 22, roles: [:web, :app, :db], primary: true
+server "146.185.176.204", port: 22, roles: [:web, :app, :db], primary: true
 
-set :repo_url,        "git@github.com:me222wm/1dv42e-me222wm.git"
-set :application,     "lawfirm"
-set :user,            "deployer"
+set :repo_url,        "https://github.com/mickeeri/lawfirm-test"
+set :application,     "lawfirm-test"
+set :user,            "demo"
 set :puma_threads,    [4, 16]
 set :puma_workers,    0
 
@@ -64,8 +64,8 @@ namespace :deploy do
     on primary fetch(:migration_role) do
       within release_path do
         with rails_env: fetch(:rails_env) do
-          # execute :rake, "db:reset"
-          # execute :rake, "db:seed"
+          execute :rake, "db:reset"
+          execute :rake, "db:seed"
         end
       end
     end

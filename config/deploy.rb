@@ -1,6 +1,6 @@
 server "146.185.176.204", port: 22, roles: [:web, :app, :db], primary: true
 
-set :repo_url,        "https://github.com/mickeeri/lawfirm-test"
+set :repo_url,        "git@github.com:mickeeri/lawfirm-test.git"
 set :application,     "lawfirm-test"
 set :user,            "demo"
 set :puma_threads,    [4, 16]

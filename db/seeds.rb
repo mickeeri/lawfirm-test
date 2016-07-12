@@ -70,8 +70,6 @@ lawsuit_types.each do |type|
   LawsuitType.create(name: type)
 end
 
-
-
 User.all.each do |user|
   # Clients
   number_of_clients = 10
